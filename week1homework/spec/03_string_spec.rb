@@ -72,9 +72,13 @@ describe "Strings" do
       %Q@<span style='color:blue'>"1 + 1 = #{1 + 1}"</span>@.should eq '<span style=\'color:blue\'>"1 + 1 = 2"</span>'
     end
 
-    it "can omit the Q and just use %{}"
+    it "can omit the Q and just use %{}" do
+      %{test string}.should eq "test string"
+    end
 
-    it "created with the pattern %q supports arbitrary delimiters and behave like a single quoted string"
+    it "created with the pattern %q supports arbitrary delimiters and behave like a single quoted string" do
+      %|test string|.should eq 'test string'
+    end
 
   end
 
