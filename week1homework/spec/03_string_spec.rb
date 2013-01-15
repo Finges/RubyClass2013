@@ -7,19 +7,34 @@ describe "Strings" do
       "Ruby Course".should eq 'Ruby Course'
     end
     
-    it "are of class String"
+    it "are of class String" do
+      "Test String".should be_a String
+    end
     
-    it "can contain bare single-quote (') characters"
+    it "can contain bare single-quote (') characters" do
+      "test string '".should eq 'test string \''
+    end
     
-    it "allow the escape of double quote (\") characters"
+    it "allow the escape of double quote (\") characters" do
+      "test string \"".should eq 'test string "'
+    end
     
-    it "allow interpolation (Ruby code within the string)"
+    it "allow interpolation (Ruby code within the string)" do
+      "test string #{5 * 5}".should eq 'test string 25'
+    end
     
-    it "replace \t with a tab character"
+    it "replace \t with a tab character" do
+      "test string \t".should eq "test string \011"
+    end
 
-    it "ADD AN EXAMPLE THAT TESTS A DIFFERENT ESCAPE SEQUENCE"
+    it "replace \n with a newline character" do
+      "\n".should eq "\12"
+    end
 
-    it "replaceS special characters when values are specified at the end via '% [value]'"
+    it "replaceS special characters when values are specified at the end via '% [value]'" do
+      animal = "%s is a animal" % ["cat"]
+      animal.should eq "cat is a animal"
+    end
     
   end
   
@@ -29,15 +44,25 @@ describe "Strings" do
       'Alfred E. Newman'.should eq "Alfred E. Newman"
     end
     
-    it "are of class String"
+    it "are of class String" do
+      'test string'.should be_a String
+    end
     
-    it "allow double-quote (\") characters"
+    it "allow double-quote (\") characters" do
+      'test string "'.should eq "test string \""
+    end
 
-    it "allow the escape of single quote (') characters"
+    it "allow the escape of single quote (') characters" do
+      'test string \''.should eq "test string '"
+    end
     
-    it "does not interpolate Ruby code"
+    it "does not interpolate Ruby code" do
+      'test string #{5 * 5}'.should_not eq 'test string 25'
+    end
     
-    it "does not escape newline characters"
+    it "does not escape newline characters" do
+      'test string \n'.should eq "test string \\n"
+    end
     
   end
 
