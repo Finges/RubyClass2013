@@ -20,7 +20,7 @@ describe "The Rspec ruby gem" do
     it "alerts you when examples fail" do
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      1.should eq 1
     end
 
     it "creates a be_zero matcher when it finds a #zero? predicate method" do
@@ -34,7 +34,7 @@ describe "The Rspec ruby gem" do
     it "requires that examples use expectations, e.g. #should, or you get a false positive" do
       # The following expression is false.
       # However, this example PASSES because no expectation was created.
-      true == false
+      true.should_not eq false
       #
       # this code would cause the example to fail:
       # true.should == false
