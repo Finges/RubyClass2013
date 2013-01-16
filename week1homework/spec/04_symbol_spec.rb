@@ -8,14 +8,24 @@ describe "Symbols" do
     ("only" + "one").to_sym.object_id.should eq :onlyone.object_id
   end
 
-  it "are of class Symbol"
+  it "are of class Symbol" do 
+    :test.should be_a Symbol
+  end
   
-  it "are not the same as a string of the same characters"
+  it "are not the same as a string of the same characters" do
+    :test.should_not eq "test"
+  end
   
-  it "are convertable to strings"
+  it "are convertable to strings" do
+    :test.to_s.should eq "test"
+  end
 
-  it "are convertable from a string"
+  it "are convertable from a string" do
+    "test".to_sym.should eq :test
+  end
 
-  it "automatically converts to a string when interpolated"
+  it "automatically converts to a string when interpolated" do
+    "test #{:test}".should eq "test test"
+  end
   
 end
