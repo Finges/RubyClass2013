@@ -72,7 +72,9 @@ class Contacts
 
   def formatted_list
     temp = ""
-    @contacts.each{|x| temp += format_contact(x).to_s + "\n"}
+    @contacts.each do |x| 
+      temp += format_contact(x).to_s + "\n"
+    end
     temp.chomp
   end
 
