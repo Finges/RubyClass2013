@@ -1,6 +1,9 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require 'week3'
 
+A_CONSTANT = "I'm a CONSTANT"
+$global_var = "I'm a Global!"
+
 describe 'Variable type' do
 
   # TODO: Figure out where to set these (but NOT inside each test)
@@ -51,7 +54,7 @@ describe 'Week3 method' do
   it '#halve! returns first half of an array' do
     input = [1,2,3,4]
     expected = [1,2]
-    actual = subject.halve input
+    actual = subject.halve! input
     actual.should eq expected
   end
 
@@ -97,11 +100,23 @@ describe 'Week3 method' do
     #
     # challenge: write the tests first
     #
-    it 'returns defaults when no parameter is provided'
+    it 'returns defaults when no parameter is provided' do
+      input = {}
+      expected = {path: './', version: '0.1.0', mode: 'production'}
+      subject.configure(input).should eq expected
+    end
 
-    it 'returns default value when :path is missing from parameter'
+    it 'returns default value when :path is missing from parameter' do
+      input = {version: '1.0', mode: 'test'}
+      expected = {path: './', version: '1.0', mode: 'test'}
+      subject.configure(input).should eq expected
+    end
 
-    it 'returns overridden value when :version is included in the parameter'
+    it 'returns overridden value when :version is included in the parameter' do
+      input = {path: '/home/chris', version: '1.0', mode: 'development'}
+      expected = {path: '/home/chris', version: '1.0', mode: 'development'}
+      subject.configure(input).should eq expected
+    end
 
   end
 end
