@@ -32,8 +32,8 @@ class Week3
 		end
 	end
 
-	def configure (hash={})
-		default = {path: './', version: "0.1.0", mode: "production"}.merge(hash)
+	def configure(hash={})
+		{path: './', version: "0.1.0", mode: "production"}.merge(hash)
 	end
 
 	def run_me arg1
@@ -41,11 +41,8 @@ class Week3
 	end
 
 	def each_odd array
-		array.each do |x|
-			if x % 2 == 1
-				yield x
-			end
-		end
-		array.select{|x| x % 2 == 1}
+		array.collect do |x|
+			yield x if x.to_i.odd?
+		end.delete_if{|x| x == nil}
 	end
 end

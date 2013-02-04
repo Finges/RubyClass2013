@@ -24,8 +24,8 @@ describe 'Week3 block method' do
 
   it '#each_odd returns an array without even items' do
     input = [1,2,3,4,5,6,7,8,9,10,11]
-    expected = [1,3,5,7,9,11]
-    subject.each_odd(input){|x| puts x}.should eq expected
+    expected = [2,6,10,14,18,22]
+    subject.each_odd(input){|x| x * 2}.should eq expected
   end
 end
 
