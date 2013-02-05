@@ -42,6 +42,12 @@ describe 'AutoShop' do
       subject.employee_list.should eq "Sue\nLou"
     end
 
+    it "should allow address to be set" do
+      expected = "123 street"
+      subject.address = expected
+      subject.address.should eq expected
+    end
+
   end
 end
 
