@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'test_gem'
+
+case ARGV[0]
+when "first"
+	first_line = TestGem::MyFile.new ARGV[1]
+	puts first_line.first(ARGV[1])
+when "last"
+	last_line = TestGem::MyFile.new ARGV[1]
+	puts last_line.last(ARGV[1])	
+else
+	puts "test_gem can return the first or last line of a text file"
+	puts "Usage:"
+	puts "test_gem first <file location>"
+	puts "test_gem last <file location>"
+end
