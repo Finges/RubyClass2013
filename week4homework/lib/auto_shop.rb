@@ -15,10 +15,12 @@ class AutoShop < Business
   end
 
   def employee_list
-    temp_string = ""
-    @employees.each do |x|
-      temp_string += "#{x.name}\n"
-    end
-    temp_string.chomp
+    #temp_string = ""
+    #@employees.each do |x|
+    #  temp_string += "#{x.name}\n"
+    #end
+    #temp_string.chomp
+
+    employees.collect{|x| x.name}.join("/n")
   end
 end
