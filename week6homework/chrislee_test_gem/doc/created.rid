@@ -1,0 +1,15 @@
+Fri, 15 Feb 2013 14:51:30 -0800
+./bin/test_gem	Fri, 15 Feb 2013 09:29:13 -0800
+./config.txt	Fri, 15 Feb 2013 14:17:00 -0800
+./Gemfile	Fri, 15 Feb 2013 14:30:16 -0800
+./Guardfile	Fri, 15 Feb 2013 09:29:13 -0800
+./lib/test_gem/hello.rb	Fri, 15 Feb 2013 09:29:13 -0800
+./lib/test_gem/myfile.rb	Fri, 15 Feb 2013 09:29:13 -0800
+./lib/test_gem/version.rb	Fri, 15 Feb 2013 09:29:13 -0800
+./lib/test_gem.rb	Fri, 15 Feb 2013 14:46:14 -0800
+./Rakefile	Fri, 15 Feb 2013 09:29:13 -0800
+./spec/hello_spec.rb	Fri, 15 Feb 2013 09:29:13 -0800
+./spec/myfile_spec.rb	Fri, 15 Feb 2013 09:29:13 -0800
+./spec/test.txt	Fri, 15 Feb 2013 09:29:13 -0800
+./spec/test_gem_spec.rb	Fri, 15 Feb 2013 14:50:06 -0800
+./tmp/rspec_guard_result	Fri, 15 Feb 2013 14:50:08 -0800

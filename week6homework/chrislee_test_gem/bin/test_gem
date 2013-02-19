@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'test_gem'
+
+case ARGV[0]
+when "first"
+	puts TestGem::MyFile.first(ARGV[1])
+when "last"
+	puts TestGem::MyFile.last(ARGV[1])
+when "--init"
+	TestGem.init_config
+when nil 
+	puts TestGem.configure.to_s
+else
+	puts "test_gem can return the first or last line of a text file"
+	puts "--init will initialize the default config.yml"
+	puts "Usage:"
+	puts "test_gem first <file location>"
+	puts "test_gem last <file location>"
+	puts "test_gem --init"
+end
